@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehber Kayıt Sistemi</title>
+    <link rel="stylesheet" href="assest/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="taha.css">
+    <script></script>
+</head>
+<style>
+    h1 {
+        text-align: center;
+            align-items: center;
+            align-content: center;
+    }
+
+</style>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <h1> Rehber </h1>
+
+    <div class="container">
+        <div class="row" style="margin-top: 150px;">
+            <div class="col-12">
+
+
+                <center>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Kişi Ekle
+                
+                    </button>
+                </center>
+
+
+                <!-- MODAL -->
+
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Personel Ekle</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="adi" placeholder="İsim Giriniz">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="soyadi" placeholder="Soyad Giriniz">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="mail" placeholder="Email Giriniz">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="telefon" placeholder="telefon Giriniz">
+                                </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                <button type="button" id="btn_ekle" class="btn btn-primary">Ekle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" id="KişiSayi" style="margin-top: 50px;">
+            <div class="col-12">
+
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                           
+                            <th scope="col">ADI</th>
+                            <th scope="col">SOYADI</th>
+                            <th scope="col">MAİL</th>
+                            <th scope="col">TELEFON</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabloBody">
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- MODEL BİTİŞ -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+
+
+    <script>
+        sayac = 0;
+
+        $("#btn_ekle").click(function () {
+
+            sayac++;
+            ad = $("#adi").val();
+            soyad = $("#soyadi").val();
+            telefon = $("#telefon").val();
+            mail = $("#mail").val();
+
+            if ($('#btn_ekle').text() == "Ekle") {
+                if (ad.length < 3 || soyad.length < 3) {
+                    alert("Lütfen ad veya soyad Değerini Doğru Giriniz");
+                } else if (mail.length < 3 || mail.indexOf("@") < 0) {
+                    alert("Lütfen Mail Değerini Doğru Giriniz");
+                } else if (telefon.length < 11 || telefon.length > 11) {
+                    alert("Lütfen Telefon Değerini Doğru Giriniz");
+                } else {
+                    $("#tabloBody").append('<tr>  <th scope="row">' + sayac + '</th> <td>' + ad +
+                        '</td> <td>' + soyad +
+                        '</td> <td>' + telefon + '</td><td>' + mail + '</td>  ' +
+                        ' <td> <div class="btn-group" role="group" >   <button type="button" class="btn btn-secondary duzenle">Düzenle</button>' +
+                        '<button type="button" class="btn btn-secondary sil">Sil</button></div> </td><tr>')
+                    temizle();
+                }
+            }
+            if ($('#btn_ekle').text() == "Duzenle") {
+                if (ad.length < 3 || soyad.length < 3) {
+                    alert("Lütfen ad veya soyad Değerini Doğru Giriniz");
+                } else if (mail.length < 3 || mail.indexOf("@") < 0) {
+                    alert("Lütfen Mail Değerini Doğru Giriniz");
+                } else if (telefon.length < 11 || telefon.length > 11) {
+                    alert("Lütfen Telefon Değerini Doğru Giriniz");
+                } else {
+                    $(".duzenleniyor").children().eq(1).html(ad);
+                    $(".duzenleniyor").children().eq(2).html(soyad);
+                    $(".duzenleniyor").children().eq(3).html(telefon);
+                    $(".duzenleniyor").children().eq(4).html(mail);
+                    $(".duzenleniyor").removeClass("duzenleniyor");
+                    $('#exampleModal').modal('hide');
+                    $('#btn_ekle').text("Ekle");
+                    temizle();
+                }
+            }
+
+        });
+
+        function temizle() {
+            $("#adi").val("");
+            $("#soyadi").val("");
+            $("#telefon").val("");
+            $("#mail").val("");
+
+        }
+
+        function personelSayisi() {
+            var satir =$("#tabloBody").children().children().length ;
+            var personelSayisi = (satir / 2); 
+            for (let index = 0; index < personelSayisi; index++) {
+                $("#tabloBody").children("tbody").children().eq(index).children().eq(0).html(index);
+            }
+
+        }
+
+        $("body").on("click", ".duzenle", function () {
+
+            $("#adi").val($(this).parent().parent().parent().children().eq(1).html());
+            $("#soyadi").val($(this).parent().parent().parent().children().eq(2).html());
+            $("#telefon").val($(this).parent().parent().parent().children().eq(3).html());
+            $("#mail").val($(this).parent().parent().parent().children().eq(4).html());
+
+            $(this).parent().parent().parent().addClass("duzenleniyor");
+            $('#btn_ekle').text("Duzenle");
+            $('#exampleModal').modal('show');
+
+
+
+        });
+
+
+        $("body").on("click", ".sil", function () {
+            $(this).parent().parent().parent().remove();
+            personelSayisi();
+        });
+    </script>
+
+
+</body>
+
+</html>

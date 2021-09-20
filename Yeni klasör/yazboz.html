@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Sweet alert src -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <title>OKEY 101</title>
+</head>
+<style>
+    .pageOne {
+        background-image: url("http://www.sedefokey.com/wp-content/uploads/2019/08/122asasf.jpg");
+        background-size: cover;
+        height: 50%;
+
+    }
+
+    body {
+        background-image: url('https://jooinn.com/images350_/green-mountain-painting.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .pageOne {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 5%;
+    }
+
+    .pageTwo {
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 2%;
+    }
+
+        .table {
+            border: 5px solid black;
+            text-align: center;
+            align-items: center;
+        }
+
+    .user_1 {
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        padding-top: 10%;
+        margin-right: 70%;
+        top: 100px;
+    }
+
+    .user_2 {
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        margin-left: 70%;
+
+
+    }
+
+    .user_3 {
+        text-align: center;
+        align-items: center;
+        align-content: center;
+
+        margin-right: 60%;
+        position: relative;
+        right: 150px;
+        top: 10px;
+    }
+
+    .user_4 {
+        text-align: center;
+        align-items: center;
+        align-content: center;
+
+        padding-top: 10%;
+        position: relative;
+        right: 100px;
+
+    }
+
+    .numberOfLap {
+        text-align: center;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+
+    .save {
+        align-items: center;
+        text-align: center;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+      
+    }
+</style>
+
+<body>
+
+    <div id="allPages">
+        <div class="pageOne">
+            <div class="user_1">
+                <div class="image-preview">
+                    <img src="" alt="" style="width: 100px;height: 100px;" id="imgUserOne" class="img-fluid">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                        <input id="chbx1" class="form-check-input mt-0" type="checkbox"
+                            aria-label="Checkbox for following text input">
+                    </div>
+                    <input id="userOneInput" type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input class="form-control form-control-sm" id="formFileSm1" onchange="showPreviewOne(event);"
+                        type="file">
+                </div>
+            </div>
+            <div class="user_2">
+                <div class="image-preview">
+                    <img src="" style="width: 100px;height: 100px;" alt="" id="imgUserTwo" class="img-fluid">
+                </div>
+                <div class="input-group mb-3">
+
+                    <div class="input-group-text">
+                        <input id="chbx2" class="form-check-input mt-0" type="checkbox"
+                            aria-label="Checkbox for following text input">
+                    </div>
+                    <input id="userTwoInput" type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input class="form-control form-control-sm" id="formFileSm2" onchange="showPreviewTwo(event);"
+                        type="file">
+                </div>
+            </div>
+            <div class="user_3">
+                <div class="image-preview">
+                    <img src="" style="width: 100px;height: 100px;" alt="" id="imgUserThree" class="img-fluid">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                        <input id="chbx3" class="form-check-input mt-0" type="checkbox"
+                            aria-label="Checkbox for following text input">
+                    </div>
+                    <input id="userThreeInput" type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input class="form-control form-control-sm" id="formFileSm3" onchange="showPreviewThree(event);"
+                        type="file">
+                </div>
+            </div>
+            <div class="user_4">
+                <div class="image-preview">
+                    <img src="" style="width: 100px;height: 100px;" alt="" id="imgUserFour" class="img-fluid">
+                </div>
+                <div class="input-group mb-3">
+
+                    <div class="input-group-text">
+                        <input id="chbx4" class="form-check-input mt-0" type="checkbox"
+                            aria-label="Checkbox for following text input">
+                    </div>
+                    <input id="userFourInput" type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input class="form-control form-control-sm" id="formFileSm4" onchange="showPreviewFour(event);"
+                        type="file">
+                </div>
+            </div>
+            <div class="numberOfLap">
+
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Number of Laps</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="2">2</option>
+                        <option value="7">7</option>
+                        <option value="9">9</option>
+                        <option value="11">11</option>
+                        <option value="13">13</option>
+                    </select>
+                </div>
+            </div>
+            <div class="save">
+                <button class="btn btn-primary" type="submit" onclick="saveBtn()">Save</button>
+            </div>
+        </div>
+
+        <div class="pageTwo" style="display: none;">
+            <table class="table caption-top">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th id="laps">Laps</th>
+
+                        <th id="player1" class="text-center">
+                            <div class="col-12">
+                                <img src="" alt="" style="width: 100px;height: 100px;" id="userOneInTableFile"
+                                    class="img-thumbnail">
+                            </div>
+                        </th>
+
+                        <th id="player2">
+                            <div class="col-12">
+                                <img src="" alt="" style="width: 100px;height: 100px;" id="userTwoInTableFile"
+                                    class="img-thumbnail">
+
+                            </div>
+                        </th>
+
+                        <th id="player3">
+                            <div class="col-12">
+                                <img src="" alt="" style="width: 100px;height: 100px;" id="userThreeInTableFile"
+                                    class="img-thumbnail">
+
+                            </div>
+                        </th>
+
+                        <th id="player4">
+                            <div class="col-12">
+                                <img src="" alt="" style="width: 100px;height: 100px;" id="userFourInTableFile"
+                                    class="img-thumbnail">
+
+                            </div>
+                        </th>
+
+                        <th id="checked">Checked</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableTbody">
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td id="footerSum">SUM</td>
+                        <td id="footerSumUserOne">0</td>
+                        <td id="footerSumUserTwo">0</td>
+                        <td id="footerSumUserThree">0</td>
+                        <td id="footerSumUserFour">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div id="result">
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </symbol>
+                    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                    </symbol>
+                    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </symbol>
+                </svg>
+
+                <div id="winnerDiv" class="alert alert-success d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                        <use xlink:href="#check-circle-fill" />
+                    </svg>
+                    <div>
+                        <p id="winner"></p>
+                    </div>
+                </div>
+
+                <div id="loserDiv" class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                        <use xlink:href="#exclamation-triangle-fill" />
+                    </svg>
+                    <div>
+                        <p id="loser"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="userFight">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th id="cross">#</th>
+                            <th class="playerFight1" id="playerFight1">user1</th>
+                            <th class="playerFight2" id="playerFight2">user2</th>
+                            <th class="playerFight3" id="playerFight3">user3</th>
+                            <th class="playerFight4" id="playerFight4">user4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="playerFight1" id="playerFight11">user1</th>
+                            <th class="mustBeNone"></th>
+                            <th id="1-2"></th>
+                            <th id="1-3"></th>
+                            <th id="1-4"></th>
+                        </tr>
+                        <tr>
+                            <th class="playerFight2" id="playerFight22">user2</th>
+                            <th id="2-1"></th>
+                            <th class="mustBeNone"></th>
+                            <th id="2-3"></th>
+                            <th id="2-4"></th>
+                        </tr>
+                        <tr>
+                            <th class="playerFight3" id="playerFight33">user3</th>
+                            <th id="3-1"></th>
+                            <th id="3-2"></th>
+                            <th class="mustBeNone"></th>
+                            <th id="3-4"></th>
+                        </tr>
+                        <tr>
+                            <th class="playerFight4" id="playerFight44">user4</th>
+                            <th id="4-1"></th>
+                            <th id="4-2"></th>
+                            <th id="4-3"></th>
+                            <th class="mustBeNone"></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var userOneName, userTwoName, userThreeName, userFourName, numberOfLaps, userChecked, moreChecked = 0, sumUserOne = 0, sumUserTwo = 0, sumUserThree = 0, sumUserFour = 0, srcUserOne, srcUserTwo, srcUserThree, srcUserFour;
+        var userOnePointArray = new Array();
+        var userTwoPointArray = new Array();
+        var userThreePointArray = new Array();
+        var userFourPointArray = new Array();
+        var fightArray = new Array();
+
+
+        function showPreviewOne(event) {
+            if (event.target.files.length > 0) {
+                srcUserOne = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById("imgUserOne");
+                preview.src = srcUserOne;
+            }
+        }
+        function showPreviewTwo(event) {
+            if (event.target.files.length > 0) {
+                srcUserTwo = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById("imgUserTwo");
+                preview.src = srcUserTwo;
+            }
+        }
+        function showPreviewThree(event) {
+            if (event.target.files.length > 0) {
+                srcUserThree = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById("imgUserThree");
+                preview.src = srcUserThree;
+            }
+        }
+        function showPreviewFour(event) {
+            if (event.target.files.length > 0) {
+                srcUserFour = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById("imgUserFour");
+                preview.src = srcUserFour;
+            }
+        }
+
+        function userFightNameWriteFunc() {
+            $(".playerFight1").text(userOneName);
+            $(".playerFight2").text(userTwoName);
+            $(".playerFight3").text(userThreeName);
+            $(".playerFight4").text(userFourName);
+            $(".mustBeNone").text("X");
+        }
+
+        function saveBtn() {
+
+
+            $("#result").hide();
+            userOneName = $('#userOneInput').val();
+            userTwoName = $('#userTwoInput').val();
+            userThreeName = $('#userThreeInput').val();
+            userFourName = $('#userFourInput').val();
+            numberOfLaps = $('#inputGroupSelect01').val();
+            checkedUser();
+            if (moreChecked != 1) {
+                swal("Error!", "No select more than one user!", "warning");
+
+            } else {
+                swal("The game has been started!", "You clicked the button for join the game!", "success");
+
+                deletePageOne();
+            }
+        }
+
+        function checkedUser() {
+            if (document.getElementById("chbx1").checked) {
+                userChecked = userOneName;
+                moreChecked++;
+            }
+            if (document.getElementById("chbx2").checked) {
+                userChecked = userTwoName;
+                moreChecked++;
+            }
+            if (document.getElementById("chbx3").checked) {
+                userChecked = userThreeName;
+                moreChecked++;
+            }
+            if (document.getElementById("chbx4").checked) {
+                userChecked = userFourName;
+                moreChecked++;
+            }
+        }
+
+        function deletePageOne() {
+            $(".pageOne").remove();
+            $(".pageTwo").show();
+            addUserToTable();
+            hoverCells(userChecked);
+        }
+
+        function hoverCells(selectedUser) {
+            switch (selectedUser) {
+                case userOneName:
+                    for (let i = 0; i < numberOfLaps; i++) {
+                        if (i % 4 == 0) { $("#userOneTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 1) { $("#userTwoTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 2) { $("#userThreeTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 3) { $("#userFourTableInput-" + (i + 1)).css("border-color", "red"); }
+                    }
+                    break;
+                case userTwoName:
+                    for (let i = 0; i < numberOfLaps; i++) {
+                        if (i % 4 == 0) { $("#userTwoTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 1) { $("#userThreeTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 2) { $("#userFourTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 3) { $("#userOneTableInput-" + (i + 1)).css("border-color", "red"); }
+                    }
+                    break;
+                case userThreeName:
+                    for (let i = 0; i < numberOfLaps; i++) {
+                        if (i % 4 == 0) { $("#userThreeTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 1) { $("#userFourTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 2) { $("#userOneTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 3) { $("#userTwoTableInput-" + (i + 1)).css("border-color", "red"); }
+                    }
+                    break;
+                case userFourName:
+                    for (let i = 0; i < numberOfLaps; i++) {
+                        if (i % 4 == 0) { $("#userFourTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 1) { $("#userOneTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 2) { $("#userTwoTableInput-" + (i + 1)).css("border-color", "red"); }
+                        if (i % 4 == 3) { $("#userThreeTableInput-" + (i + 1)).css("border-color", "red"); }
+                    }
+                    break;
+
+                default:
+                    console.log("Error in hover cells method");
+                    break;
+            }
+        }
+
+        function addUserToTable() {
+            $("#player1").append(userOneName);
+            $("#player2").append(userTwoName);
+            $("#player3").append(userThreeName);
+            $("#player4").append(userFourName);
+
+            tableUserImageAdd();
+
+            userFightNameWriteFunc();
+
+            for (let i = 0; i < numberOfLaps; i++) {
+                $("#tableTbody").append(
+                    '<tr id = "trID-' + (i + 1) + '"><td id = "lapID-' + (i + 1) + '">' + (i + 1) + '</td>' +
+                    '<td id = "userOneID-' + (i + 1) + '">' + ' <input id = "userOneTableInput-' + (i + 1) + '" type="number" class="form-control" aria-describedby="inputGroup-sizing-default"> </td>' +
+                    '<td id = "userTwoID-' + (i + 1) + '">' + ' <input id = "userTwoTableInput-' + (i + 1) + '" type="number" class="form-control" aria-describedby="inputGroup-sizing-default"> </td>' +
+                    '<td id = "userThreeID-' + (i + 1) + '">' + ' <input id = "userThreeTableInput-' + (i + 1) + '" type="number" class="form-control" aria-describedby="inputGroup-sizing-default"> </td> ' +
+                    '<td id = "userFourID-' + (i + 1) + '">' + ' <input id = "userFourTableInput-' + (i + 1) + '" type="number" class="form-control" aria-describedby="inputGroup-sizing-default"> </td>' +
+                    '<td id = "lapCheckID-' + (i + 1) + '">' + '<div class="form-check"><input  id="lapCheckInputID-' + (i + 1) + '" ' + ' class="form-check-input" type="checkbox" name="defaultCheck1"><label class="form-check-label" for="lapCheckInputID-' + (i + 1) + '" ' + ' ">Pass the lap</label></div> </td></tr>');
+
+                $("input").prop("disabled", true);
+                $("#lapCheckInputID-1").prop("disabled", false);
+                $("#userOneTableInput-1").prop("disabled", false);
+                $("#userTwoTableInput-1").prop("disabled", false);
+                $("#userThreeTableInput-1").prop("disabled", false);
+                $("#userFourTableInput-1").prop("disabled", false);
+
+                $(("#lapCheckInputID-" + (i + 1))).change(function () {
+                    var $input = $(this);
+                    if ($input.prop("checked") == true) {
+
+                        swal("Lap is over!", "You clicked the button for the next lap!", "success");
+                        let oneI, twoI, threeI, fourI;
+                        (isNaN(parseInt($("#userOneTableInput-" + (i + 1)).val()))) ? oneI = (parseInt(0)) : oneI = parseInt($("#userOneTableInput-" + (i + 1)).val());
+                        (isNaN(parseInt($("#userTwoTableInput-" + (i + 1)).val()))) ? twoI = (parseInt(0)) : twoI = parseInt($("#userTwoTableInput-" + (i + 1)).val());
+                        (isNaN(parseInt($("#userThreeTableInput-" + (i + 1)).val()))) ? threeI = (parseInt(0)) : threeI = parseInt($("#userThreeTableInput-" + (i + 1)).val());
+                        (isNaN(parseInt($("#userFourTableInput-" + (i + 1)).val()))) ? fourI = (parseInt(0)) : fourI = parseInt($("#userFourTableInput-" + (i + 1)).val());
+
+                        arrayAdder(oneI, twoI, threeI, fourI, (i + 1));
+
+                        $("input").prop("disabled", true);
+
+                        $("#lapCheckInputID-" + (i + 2)).prop("disabled", false);
+                        $("#userOneTableInput-" + (i + 2)).prop("disabled", false);
+                        $("#userTwoTableInput-" + (i + 2)).prop("disabled", false);
+                        $("#userThreeTableInput-" + (i + 2)).prop("disabled", false);
+                        $("#userFourTableInput-" + (i + 2)).prop("disabled", false);
+                    }
+                }).change();
+            }
+        }
+
+        function tableUserImageAdd() {
+            $("#userOneInTableFile").attr("src", srcUserOne);
+            $("#userTwoInTableFile").attr("src", srcUserTwo);
+            $("#userThreeInTableFile").attr("src", srcUserThree);
+            $("#userFourInTableFile").attr("src", srcUserFour);
+        }
+
+        function arrayAdder(userOnePoint, userTwoPoint, userThreePoint, userFourPoint, indexes) {
+            userOnePointArray.push(userOnePoint);
+            userTwoPointArray.push(userTwoPoint);
+            userThreePointArray.push(userThreePoint);
+            userFourPointArray.push(userFourPoint);
+
+            writeFooterSum(indexes);
+            userFightFunc();
+
+            if (indexes == numberOfLaps) {
+
+                swal("Game is over!", "Click the button for result", "success");
+
+                let sumUserOne = 0, sumUserTwo = 0, sumUserThree = 0, sumUserFour = 0, minName, maxName;
+
+                for (let i = 0; i < numberOfLaps; i++) {
+                    sumUserOne += parseInt(userOnePointArray[i]);
+                    sumUserTwo += parseInt(userTwoPointArray[i]);
+                    sumUserThree += parseInt(userThreePointArray[i]);
+                    sumUserFour += parseInt(userFourPointArray[i]);
+                }
+                let maxVal = Math.max(sumUserOne, sumUserTwo, sumUserThree, sumUserFour);
+                let minVal = Math.min(sumUserOne, sumUserTwo, sumUserThree, sumUserFour);
+
+                switch (maxVal) {
+                    case sumUserOne:
+                        maxName = userOneName;
+                        break;
+
+                    case sumUserTwo:
+                        maxName = userTwoName;
+                        break;
+
+                    case sumUserThree:
+                        maxName = userThreeName;
+                        break;
+
+                    case sumUserFour:
+                        maxName = userFourName;
+                        break;
+                    default:
+                        console.log("error in maxName switch-case");
+                        break;
+                }
+
+                switch (minVal) {
+                    case sumUserOne:
+                        minName = userOneName;
+                        break;
+
+                    case sumUserTwo:
+                        minName = userTwoName;
+                        break;
+
+                    case sumUserThree:
+                        minName = userThreeName;
+                        break;
+
+                    case sumUserFour:
+                        minName = userFourName;
+                        break;
+                    default:
+                        console.log("error in minName switch-case");
+                        break;
+                }
+
+                writeResult(minVal, minName, maxVal, maxName);
+            }
+        }
+
+        function writeFooterSum(tail) {
+            sumUserOne = 0;
+            sumUserTwo = 0;
+            sumUserThree = 0;
+            sumUserFour = 0;
+
+            for (let i = 0; i < tail; i++) {
+                sumUserOne += parseInt(userOnePointArray[i]);
+                sumUserTwo += parseInt(userTwoPointArray[i]);
+                sumUserThree += parseInt(userThreePointArray[i]);
+                sumUserFour += parseInt(userFourPointArray[i]);
+
+                console.log(userOnePointArray[i]);
+
+                if (fightArray.length == 0) {
+                    fightArray.push(sumUserOne);
+                    fightArray.push(sumUserTwo);
+                    fightArray.push(sumUserThree);
+                    fightArray.push(sumUserFour);
+                } else {
+                    for (let index = 0; index < fightArray.length; index++) {
+                        if (index == 0) {
+                            fightArray[index] = sumUserOne;
+                        }
+                        if (index == 1) {
+                            fightArray[index] = sumUserTwo;
+                        }
+                        if (index == 2) {
+                            fightArray[index] = sumUserThree;
+                        }
+                        if (index == 3) {
+                            fightArray[index] = sumUserFour;
+                        }
+                    }
+                }
+
+            }
+            let userBGarray = [sumUserOne, sumUserTwo, sumUserThree, sumUserFour];
+
+            userBGarray.sort((a, b) => a - b);
+            let colorArray = ["#40ff00", " #ccff66", " #ff9933", "#ff3300"];
+
+            for (let i = 0; i < userBGarray.length; i++) {
+                if (sumUserOne == userBGarray[i]) {
+                    $("#footerSumUserOne").text(sumUserOne);
+                    $("#footerSumUserOne").css("background-color", colorArray[i]);
+                    $("#player1").css("background-color", colorArray[i]);
+                }
+                if (sumUserTwo == userBGarray[i]) {
+                    $("#footerSumUserTwo").text(sumUserTwo);
+                    $("#footerSumUserTwo").css("background-color", colorArray[i]);
+                    $("#player2").css("background-color", colorArray[i]);
+
+                }
+                if (sumUserThree == userBGarray[i]) {
+                    $("#footerSumUserThree").text(sumUserThree);
+                    $("#footerSumUserThree").css("background-color", colorArray[i]);
+                    $("#player3").css("background-color", colorArray[i]);
+
+                }
+                if (sumUserFour == userBGarray[i]) {
+                    $("#footerSumUserFour").text(sumUserFour);
+                    $("#footerSumUserFour").css("background-color", colorArray[i]);
+                    $("#player4").css("background-color", colorArray[i]);
+
+                }
+
+            }
+        }
+
+        function userFightFunc() {
+            for (let i = 1; i <= 4; i++) {
+                for (let j = 1; j <= 4; j++) {
+                    if (i == 1) {
+                        let res = sumUserOne - parseInt(fightArray[j - 1]);
+                        if (res < 0) { $('#' + i + '-' + j).css("background-color", "#40ff00"); }
+                        else if (res == 0) { $('#' + i + '-' + j).css("background-color", "#ff9933"); }
+                        else { $('#' + i + '-' + j).css("background-color", "#ff3300"); }
+                        $('#' + i + '-' + j).text(Math.abs(res));
+                    }
+                    if (i == 2) {
+                        let res = sumUserTwo - parseInt(fightArray[j - 1]);
+                        if (res < 0) { $('#' + i + '-' + j).css("background-color", "#40ff00"); }
+                        else if (res == 0) { $('#' + i + '-' + j).css("background-color", "#ff9933"); }
+                        else { $('#' + i + '-' + j).css("background-color", "#ff3300"); }
+                        $('#' + i + '-' + j).text(Math.abs(res));
+                    }
+                    if (i == 3) {
+                        let res = sumUserThree - parseInt(fightArray[j - 1]);
+                        if (res < 0) { $('#' + i + '-' + j).css("background-color", "#40ff00"); }
+                        else if (res == 0) { $('#' + i + '-' + j).css("background-color", "#ff9933"); }
+                        else { $('#' + i + '-' + j).css("background-color", "#ff3300"); }
+                        $('#' + i + '-' + j).text(Math.abs(res));
+                    }
+                    if (i == 4) {
+                        let res = sumUserFour - parseInt(fightArray[j - 1]);
+                        if (res < 0) { $('#' + i + '-' + j).css("background-color", "#40ff00"); }
+                        else if (res == 0) { $('#' + i + '-' + j).css("background-color", "#ff9933"); }
+                        else { $('#' + i + '-' + j).css("background-color", "#ff3300"); }
+                        $('#' + i + '-' + j).text(Math.abs(res));
+                    }
+                }
+            }
+        }
+
+        function writeResult(winnerPoint, winerName, loserPoint, loserName) {
+            $("#result").show();
+
+            $("#winner").text("Winner = " + winerName + " | Point = " + winnerPoint);
+            $("#loser").text("Loser = " + loserName + " | Point = " + loserPoint);
+        }
+    </script>
+
+</body>
+
+</html>

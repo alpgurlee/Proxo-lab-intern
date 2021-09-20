@@ -1,0 +1,56 @@
+body {
+    background-color: rgba(33, 37, 41, 1) !important;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4D1BAQFO76Ab3MGOVg/company-background_10000/0/1602621837935?e=2159024400&v=beta&t=Sq7WYB_N99mIl2SYi8ynze-dPxlTcoFz9zQLHL9KzzE");
+
+    background-attachment: fixed;
+
+}
+
+p {
+    color: white;
+    text-align: center;
+}
+
+.coin {
+
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.modalDiv {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.acrdBtn {
+    color: greenyellow;
+    background-color: #212529da !important;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4D1BAQFO76Ab3MGOVg/company-background_10000/0/1602621837935?e=2159024400&v=beta&t=Sq7WYB_N99mIl2SYi8ynze-dPxlTcoFz9zQLHL9KzzE");
+
+    background-attachment: fixed;
+
+}
+
+.acrdDiv {
+    background-color: #212529da !important;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4D1BAQFO76Ab3MGOVg/company-background_10000/0/1602621837935?e=2159024400&v=beta&t=Sq7WYB_N99mIl2SYi8ynze-dPxlTcoFz9zQLHL9KzzE");
+
+    background-attachment: fixed;
+
+}
+
+.ownCoin {
+    background-color: rgba(153, 51, 51, 0.356);
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+}
+
+.ownCoinP {
+    color: greenyellow;
+}

@@ -1,0 +1,17 @@
+* {
+    font-family: fantasy;
+  }
+  img {
+    filter: blur(2px) !important;
+  }
+  img:hover {
+    filter: blur(0px) !important;
+  }
+
+  body {
+    background-color:rebeccapurple   !important;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4D1BAQFO76Ab3MGOVg/company-background_10000/0/1602621837935?e=2159024400&v=beta&t=Sq7WYB_N99mIl2SYi8ynze-dPxlTcoFz9zQLHL9KzzE");
+
+    background-attachment: fixed;
+
+}

@@ -1,0 +1,31 @@
+* {
+    font-family: fantasy;
+  }
+  body{
+    background-color: rgba(33, 37, 41, 1) !important;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4D1BAQFO76Ab3MGOVg/company-background_10000/0/1602621837935?e=2159024400&v=beta&t=Sq7WYB_N99mIl2SYi8ynze-dPxlTcoFz9zQLHL9KzzE");
+
+    background-attachment: fixed;
+  }
+  .imagePart,
+  .image,
+  .bckgrnd,
+  .infoPart {
+    background-color: #ff440057 !important;
+    color: #eaeff2 !important;
+    text-align: center;
+    /* align-items: center; */
+  }
+  
+  .educationPart,
+  .bckgrnd2 {
+    background-color: #00e0d565 !important;
+    color: #eaeff2 !important;
+  }
+  
+  .mustBeBlok {
+    padding: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to right, #00e0d565, #ff440057);
+  }
